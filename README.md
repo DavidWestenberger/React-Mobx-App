@@ -2,7 +2,7 @@
 Collection of apps, all using React.js and some other frameworks (Mobx, Redux, Flux)!  
 
 What's this?
-This is a collection of code examples. Each one gets more difficult and builds upon the other previous example applications. 
+This is a collection of code examples. Each one gets more difficult and builds upon the previous example applications. 
 
 
 Purpose
