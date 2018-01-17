@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 200px;
   padding: 20px;
   color: white;
 }
@@ -69,4 +69,31 @@ li {
 
 .footer ul li:before {
   content: '> ';
+}
+
+.navbar{
+  margin-bottom: 0px;
+}
+
+.wrapper{
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 768px){
+  .wrapper {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .wrapper {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px){
+  .wrapper {
+    width: 100%;
+  }
 }

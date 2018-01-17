@@ -1,10 +1,9 @@
 import "../css/main.css";
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route,  } from 'react-router-dom'
-import { IndexRoute, hashHistory } from "react-router";
-import TodoStore from "./TodoStore";
-import TodoList from "./TodoList";
+import {BrowserRouter, Route } from 'react-router-dom'
+/*import TodoStore from "./TodoStore";
+import TodoList from "./TodoList";*/
 
 import Header from "./Components/Layouts/Header";
 import Layout from "./Components/Layouts/Layout";
@@ -20,12 +19,15 @@ import Settings from "./Components/pages/Settings";
 const app = document.getElementById("app")
 
 ReactDOM.render(
+  <div>
   <BrowserRouter>
-    <Route path="/" component={Layout}>
-      <IndexRoute component={Featured}></IndexRoute>
-      <Route path="archives(/:article)" name="archives" component={Archives}></Route>
-      <Route path="settings" name="settings" component={Settings}></Route>
-    </Route>
-  </BrowserRouter>,
+    <switch>
+      <Route exact path="/" component={Layout}></Route>
+      <Route path='/Featured' component={Featured}></Route>
+      <Route path='/Archives' component={Archives}></Route>
+      <Route path='/Settings' component={Settings}></Route>
+    </switch>
+  </BrowserRouter>
+  </div>,
 app);
 
