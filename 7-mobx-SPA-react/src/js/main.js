@@ -21,12 +21,14 @@ const app = document.getElementById("app")
 ReactDOM.render(
   <div>
   <BrowserRouter>
-    <switch>
-      <Route exact path="/" component={Layout}></Route>
-      <Route path='/Featured' component={Featured}></Route>
-      <Route path='/Archives' component={Archives}></Route>
-      <Route path='/Settings' component={Settings}></Route>
-    </switch>
+    <Layout>
+      <switch>
+        <Route exact path="/" component={Featured}></Route>
+        <Route path='/Featured' component={Featured}></Route>
+        <Route path='/Archives' component={Archives}></Route>
+        <Route path='/Settings' component={Settings}></Route>
+      </switch>
+    </Layout>
   </BrowserRouter>
   </div>,
 app);
