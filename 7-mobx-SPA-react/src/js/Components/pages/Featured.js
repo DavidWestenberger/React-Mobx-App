@@ -8,7 +8,7 @@ export default class Featured extends React.Component {
     return(
       <div>
         {testFunction()}
-        <h1> Hello Featured page </h1>
+        <h1> Featured page </h1>
         }
       </div>    
     )

@@ -33,6 +33,9 @@ module.exports = {
   },
   devServer: {
     port: 3000,
+    historyApiFallback: true,
+    contentBase: './',
+    hot: true
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),

@@ -6,11 +6,22 @@ import { BrowserRouter, NavLink, Route } from 'react-router-dom'
 import Archives from "../pages/Archives"
 import Featured from "../pages/Featured";
 import Settings from "../pages/Settings";
+import Home from "../pages/Home";
 import Layout from "./Layout";
 
 
 export default class Header extends React.Component{
 	render(){
+    console.log("header prop below")
+    console.log(this.props);
+    const location  = this.props;
+    const homeClass = location.pathName === "/" ? "active" : "";
+    const featuredClass = location.pathName.match(/^\/Featured/) ? "active" : "";
+    const archivesClass = location.pathName.match(/^\/Archives/) ? "active" : "";
+    const settingsClass = location.pathName.match(/^\/Settings/) ? "active" : "";
+    // const navClass = collapsed ? "collapse" : "";
+
+
 		return(
       <div className="App">
         <div className="App-header wrapper">
@@ -27,10 +38,10 @@ export default class Header extends React.Component{
               </div>
               <div id="navbar" className="navbar-collapse collapse">
                 <ul className="nav navbar-nav">
-                  <li className="active"><NavLink to="/" href="#">Home</NavLink></li>
-                  <li><NavLink to="/Featured">Featured</NavLink></li>
-                  <li><NavLink to="/Archives">Archives</NavLink></li>
-                  <li><NavLink to="/Settings">Settings</NavLink></li>
+                  <li className={homeClass}> <NavLink to="/">Home</NavLink></li>
+                  <li className={featuredClass}><NavLink to="/Featured">Featured</NavLink></li>
+                  <li className={archivesClass}><NavLink to="/Archives/SomeArticle">Archives</NavLink></li>
+                  <li className={settingsClass}><NavLink to="/Settings">Settings</NavLink></li>
                 </ul>
               </div>
             </div>
