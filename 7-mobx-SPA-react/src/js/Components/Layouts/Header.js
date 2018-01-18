@@ -11,16 +11,29 @@ import Layout from "./Layout";
 
 
 export default class Header extends React.Component{
+  constructor(){
+    super()
+    this.state = {
+      collapsed: true,
+    }
+  }
+
+  toggleCollapse() {
+      const collapsed = !this.state.collapsed;
+      this.setState({collapsed});
+  }
+
+
 	render(){
     console.log("header prop below")
     console.log(this.props);
     const location  = this.props;
+    const collapsed = this.state;
     const homeClass = location.pathName === "/" ? "active" : "";
     const featuredClass = location.pathName.match(/^\/Featured/) ? "active" : "";
     const archivesClass = location.pathName.match(/^\/Archives/) ? "active" : "";
     const settingsClass = location.pathName.match(/^\/Settings/) ? "active" : "";
-    // const navClass = collapsed ? "collapse" : "";
-
+    const navClass = collapsed.collapsed ? "collapse" : "";
 
 		return(
       <div className="App">
@@ -28,7 +41,7 @@ export default class Header extends React.Component{
           <nav className="navbar navbar-default">
             <div className="container-fluid">
               <div className="navbar-header">
-                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <button type="button" className="navbar-toggle" onClick={this.toggleCollapse.bind(this)}>
                   <span className="sr-only">Toggle navigation</span>
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
@@ -36,7 +49,7 @@ export default class Header extends React.Component{
                 </button>
                 <a className="navbar-brand" href="#">Mobx SPA</a>
               </div>
-              <div id="navbar" className="navbar-collapse collapse">
+              <div id="navbar" className={"navbar-collapse " + navClass}>
                 <ul className="nav navbar-nav">
                   <li className={homeClass}> <NavLink to="/">Home</NavLink></li>
                   <li className={featuredClass}><NavLink to="/Featured">Featured</NavLink></li>
