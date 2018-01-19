@@ -2,8 +2,9 @@ import "../css/main.css";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, HashRouter, Route } from 'react-router-dom'
-/*import TodoStore from "./TodoStore";
-import TodoList from "./TodoList";*/
+
+import TodoStore from "./TodoStore";
+import TodoList from "./TodoList";
 
 import Header from "./Components/Layouts/Header";
 import Layout from "./Components/Layouts/Layout";
@@ -38,6 +39,7 @@ ReactDOM.render(
       </switch>
       </div>
     </HashRouter>
+    <TodoList store={TodoStore} />
   </div>,
 app);
 

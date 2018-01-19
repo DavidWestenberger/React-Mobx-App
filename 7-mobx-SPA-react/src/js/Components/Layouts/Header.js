@@ -28,18 +28,18 @@ export default class Header extends React.Component{
     console.log("header prop below")
     console.log(this.props);
     const location  = this.props;
-    const collapsed = this.state;
+    const collapsed = this.state.collapsed;
     const homeClass = location.pathName === "/" ? "active" : "";
     const featuredClass = location.pathName.match(/^\/Featured/) ? "active" : "";
     const archivesClass = location.pathName.match(/^\/Archives/) ? "active" : "";
     const settingsClass = location.pathName.match(/^\/Settings/) ? "active" : "";
-    const navClass = collapsed.collapsed ? "collapse" : "";
+    const navClass = collapsed ? "collapse" : "";
 
 		return(
       <div className="App">
         <div className="App-header wrapper">
           <nav className="navbar navbar-default">
-            <div className="container-fluid">
+            <div className="container-fluid hambergerOverlay">
               <div className="navbar-header">
                 <button type="button" className="navbar-toggle" onClick={this.toggleCollapse.bind(this)}>
                   <span className="sr-only">Toggle navigation</span>
@@ -59,10 +59,12 @@ export default class Header extends React.Component{
               </div>
             </div>
           </nav>
-          <img src={logo}className="App-logo"alt="logo" />
-          <h1 className="App-title">
-            Welcome to David's First React and Mobx Single Page Application
-          </h1>
+          <div>
+            <img src={logo}className="App-logo"alt="logo" />
+            <h1 className="App-title">
+              Welcome to David's First React and Mobx Single Page Application
+            </h1>
+          </div>
         </div> 
       </div>
     );
