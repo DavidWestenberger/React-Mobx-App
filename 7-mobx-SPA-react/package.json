@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base src --inline --hot"
+    "start": "webpack-dev-server --content-base src --inline --hot",
+    "dev-server": "json-server -p 8080 --watch db.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "json-server": "^0.12.1",
     "history": "^1.17.0",
     "mobx": "^2.7.0",
     "mobx-react": "^3.5.9",

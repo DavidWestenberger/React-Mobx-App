@@ -3,9 +3,6 @@ import logo from "../../../resources/logo.svg";
 import "../../../css/Header.css"
 import React from "react"
 import { BrowserRouter, NavLink, Route } from 'react-router-dom'
-import Archives from "../pages/Archives"
-import Featured from "../pages/Featured";
-import Settings from "../pages/Settings";
 import Home from "../pages/Home";
 import Layout from "./Layout";
 
@@ -33,6 +30,7 @@ export default class Header extends React.Component{
     const featuredClass = location.pathName.match(/^\/Featured/) ? "active" : "";
     const archivesClass = location.pathName.match(/^\/Archives/) ? "active" : "";
     const settingsClass = location.pathName.match(/^\/Settings/) ? "active" : "";
+    const todoClass = location.pathName.match(/^\/Todo/) ? "active" : "";
     const navClass = collapsed ? "collapse" : "";
 
 		return(
@@ -55,6 +53,7 @@ export default class Header extends React.Component{
                   <li className={featuredClass}><NavLink to="/Featured">Featured</NavLink></li>
                   <li className={archivesClass}><NavLink to="/Archives/SomeArticle">Archives</NavLink></li>
                   <li className={settingsClass}><NavLink to="/Settings">Settings</NavLink></li>
+                  <li className={todoClass}><NavLink to="/Todo">Todo</NavLink></li>
                 </ul>
               </div>
             </div>

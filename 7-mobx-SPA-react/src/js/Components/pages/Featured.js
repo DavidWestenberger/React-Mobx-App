@@ -9,7 +9,6 @@ export default class Featured extends React.Component {
       <div>
         {testFunction()}
         <h1> Featured page </h1>
-        }
       </div>    
     )
   }
