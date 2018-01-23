@@ -10,7 +10,7 @@ export default class TodoList extends React.Component{
 
   createNew(e){
     if(e.which === 13){
-      this.props.store.createTodo(e.target.value)
+      this.props.store.fetchNewTodo(e.target.value)
       e.target.value = ""
     }
   }
@@ -25,15 +25,20 @@ export default class TodoList extends React.Component{
     this.props.store.fetchTodos();
   }
 
+  deleteSelectedTodo(value){
+    this.props.store.fetchDeleteTodo(value);
+  }
+
 
   render(){
       console.log(this.props.store)
-      const { filter, filteredTodos, todos, clearComplete } = this.props.store
+      const { filter, filteredTodos, todos, clearComplete, fetchDeleteTodo  } = this.props.store
 
       const todoList = filteredTodos.map(todo => (
         <li key={todo.id}>
           <input type="checkbox" value={todo.complete} checked={todo.complete} onChange={this.toggleComplete.bind(this, todo)}/>
             {todo.value}
+            <button class="btn btn-primary btn-sm deleteTodoButton" onClick={() => this.props.store.fetchDeleteTodo(todo)}> x </button>
         </li>
       ))
 
