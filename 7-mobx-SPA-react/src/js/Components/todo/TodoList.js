@@ -45,6 +45,7 @@ export default class TodoList extends React.Component{
     return(
       <div>
         <h1> Todos:</h1>
+        <h5>(connect to DB server for this page to work!)</h5>
         <div><label>Add Todo: </label> <input className="create"  onKeyPress={this.createNew.bind(this)}/> </div>
         <div><label> Filter Todos: </label> <input className="filter"  value={filter} onChange={this.filter.bind(this)} /> </div>
         <ul>{todoList}</ul>        

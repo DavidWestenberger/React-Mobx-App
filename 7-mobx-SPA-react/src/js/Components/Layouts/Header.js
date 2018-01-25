@@ -31,6 +31,7 @@ export default class Header extends React.Component{
     const archivesClass = location.pathName.match(/^\/Archives/) ? "active" : "";
     const settingsClass = location.pathName.match(/^\/Settings/) ? "active" : "";
     const todoClass = location.pathName.match(/^\/Todo/) ? "active" : "";
+    const fireTireClass = location.pathName.match(/^\/FireTire/) ? "active" : "";
     const navClass = collapsed ? "collapse" : "";
 
 		return(
@@ -54,6 +55,7 @@ export default class Header extends React.Component{
                   <li className={archivesClass}><NavLink to="/Archives/SomeArticle">Archives</NavLink></li>
                   <li className={settingsClass}><NavLink to="/Settings">Settings</NavLink></li>
                   <li className={todoClass}><NavLink to="/Todo">Todo</NavLink></li>
+                  <li className={fireTireClass}><NavLink to="/FireTire">FireTire</NavLink></li>
                 </ul>
               </div>
             </div>
@@ -61,7 +63,7 @@ export default class Header extends React.Component{
           <div>
             <img src={logo}className="App-logo"alt="logo" />
             <h1 className="App-title">
-              Welcome to David's First React and Mobx Single Page Application
+              Welcome to David's First React and Mobx Single Page Application using sequelize.js!
             </h1>
           </div>
         </div> 

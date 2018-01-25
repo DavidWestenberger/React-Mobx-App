@@ -2,21 +2,28 @@ import "../css/main.css";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, HashRouter, Route } from 'react-router-dom'
-
+/*
+Todo Components
+*/
 import TodoStore from "./Components/todo/TodoStore";
 import TodoList from "./Components/todo/TodoList";
-
+/*
+Layout Components
+*/
 import Header from "./Components/Layouts/Header";
 import Layout from "./Components/Layouts/Layout";
-
-import Archives from "./Components/pages/Archives"
+/*
+Pages
+*/
+import Archives from "./Components/pages/Archives";
 import Home from "./Components/pages/Home";
 import Featured from "./Components/pages/Featured";
 import Settings from "./Components/pages/Settings";
+/*
+FireTire pages
+*/
+import YearMakeModelHome from "./Components/fireTire/pages/YearMakeModelHome";
 
-
-
-// import {Router, Route, IndexRoute, hashHistory} from "react-router";
 
 const app = document.getElementById("app")
 
@@ -36,6 +43,7 @@ ReactDOM.render(
         <Route path='/Featured' component={Featured}></Route>
         <Route path="/Archives/:name" component={Archives}></Route>
         <Route path='/Settings' component={Settings}></Route>
+        <Route path='/FireTire' component={YearMakeModelHome}></Route>
         <div>
           <Route path="/Todo" render={(props) => {
             return( 
