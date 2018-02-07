@@ -2,8 +2,9 @@
   "name": "react-mobx-todos",
   "version": "1.0.0",
   "description": "",
+  "proxy": "http://localhost:3001/",
   "main": "main.js",
-  "scripts": {
+    "scripts": {
     "start": "webpack-dev-server --content-base src --inline --hot",
     "dev-server": "json-server -p 8080 --watch db.json"
   },
@@ -24,8 +25,9 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "request": "^2.83.0",
-    "sequelize": "^4.32.1",
-    "sequelize-oracle": "^3.3.2-0.0"
+    "sequelize": "^4.32.2",
+    "sequelize-oracle": "^3.3.2-0.0",
+    "treemap": "^1.0.4"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
