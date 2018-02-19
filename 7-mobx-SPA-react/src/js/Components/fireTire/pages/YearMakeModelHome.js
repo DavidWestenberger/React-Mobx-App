@@ -1,14 +1,36 @@
-import React from "react";
+import React from 'react';
 import { Link } from "react-router";
+import { fetchYmmttData } from "../reducers/ymmtt";
 
 export default class YearMakeModelHome extends React.Component {
+    /* lifecycle */
+  componentDidMount(){
+    this.props = fetchYmmttData();
+  }
+
   render() {
     return(
       <div> 
         <div>
           <h1> FireTire page </h1>
+          <form>
+            <ul class="miniHeader">
+              <div class="nowidth">Year</div>
+              <select class = "style" id="yearSelect">
+                <option value='' id="testDropDown">2018 </option>
+                <option value='' id="testDropDown">2017 </option>
+                <option value='' id="testDropDown">2016 </option>
+                <option value='' id="testDropDown">2015 </option>
+              </select>
+            </ul>
+          </form>
         </div>    
-        <div>
+      </div>
+    )
+  }
+}
+
+{/*<div>
           <form>
             <ul class="miniHeader">
               <div class="nowidth">Year</div>
@@ -61,11 +83,9 @@ export default class YearMakeModelHome extends React.Component {
                 </form>
               </ul>
               <button type="button"  class="rectangleLargeButtonImage yearMakeModelButton">Search Tires</button>
-{/*              <button type="button"  class="rectangleButtonImage yearMakeModelButton">Search Tires</button>
-              <button type="button" class="rectangleButtonImage">Search Tires</button>*/}
+{              <button type="button"  class="rectangleButtonImage yearMakeModelButton">Search Tires</button>
+              <button type="button" class="rectangleButtonImage">Search Tires</button>}
           </form>
-        </div>
-      </div>
-    )
-  }
-}
+        </div>}
+
+*/}

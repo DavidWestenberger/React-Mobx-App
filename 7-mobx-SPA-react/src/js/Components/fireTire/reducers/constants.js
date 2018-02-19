@@ -1,0 +1,2 @@
+export const LOAD_YMMTT_DATA = "LOAD_YMMTT_DATA";
+export const MESSAGE_SHOW = "MESSAGE_SHOW";
