@@ -1,18 +1,23 @@
 import React from 'react';
 import { Link } from "react-router";
-import { fetchYmmttData } from "../reducers/ymmtt";
+import { LOAD_YMMTT_DATA } from "./../reducers/constants";
+import {connect} from 'react-redux';
+import { fetchYmmttData, getVisibleYmmttData } from "../reducers/ymmtt";
 
-export default class YearMakeModelHome extends React.Component {
+class YearMakeModelHome extends React.Component {
     /* lifecycle */
   componentDidMount(){
-    this.props = fetchYmmttData();
+     this.props = fetchYmmttData();
   }
 
   render() {
+
+console.log('this.props => ', this.props);
+
     return(
       <div> 
         <div>
-          <h1> FireTire page </h1>
+          <h1> New Page </h1>
           <form>
             <ul class="miniHeader">
               <div class="nowidth">Year</div>
@@ -29,6 +34,9 @@ export default class YearMakeModelHome extends React.Component {
     )
   }
 }
+
+export default connect(null,{fetchYmmttData})(YearMakeModelHome);
+
 
 {/*<div>
           <form>

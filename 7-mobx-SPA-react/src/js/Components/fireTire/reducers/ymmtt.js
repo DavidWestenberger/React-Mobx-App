@@ -1,4 +1,4 @@
-import { getymmttData } from "../services/ymmttService";
+import  getymmttData  from "./../services/ymmttService";
 import { createStore } from "redux";
 import { LOAD_YMMTT_DATA } from "./constants";
 import { showMessage } from './messages';
@@ -7,18 +7,6 @@ export const loadYmmtt = (ymmttData) => ({type: LOAD_YMMTT_DATA, payload: ymmttD
 
 const initialState = {
   ymmtt: {}
-}
-
-export default (state = initialState, action) => {
-  switch(action.type){
-    case LOAD_YMMTT_DATA:
-      return {...state, 
-        ymmtt: action.payload
-      };
-
-    default:
-      return state        
-  }
 }
 
 /* action creator: async [ return a thunk function] */
@@ -31,4 +19,15 @@ export const fetchYmmttData = () => {
 }
 
 
+/* redux state */
+export default (state = initialState, action) => {
+  switch(action.type){
+    case LOAD_YMMTT_DATA:
+      return {...state, 
+        ymmtt: action.payload
+      };
 
+    default:
+      return state        
+  }
+}

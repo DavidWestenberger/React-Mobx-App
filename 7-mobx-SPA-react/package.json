@@ -4,7 +4,7 @@
   "description": "",
   "proxy": "http://localhost:3001/",
   "main": "main.js",
-    "scripts": {
+  "scripts": {
     "start": "webpack-dev-server --content-base src --inline --hot",
     "dev-server": "json-server -p 8080 --watch db.json"
   },
@@ -22,22 +22,25 @@
     "oracledb": "^2.0.15",
     "react": "^15.2.1",
     "react-dom": "^15.3.0",
+    "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
     "request": "^2.83.0",
     "sequelize": "^4.32.2",
     "sequelize-oracle": "^3.3.2-0.0",
     "treemap": "^1.0.4"
   },
   "devDependencies": {
-    "babel-core": "^6.17.0",
+    "babel-core": "^6.26.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-add-module-exports": "^0.1.2",
     "babel-plugin-react-html-attrs": "^2.0.0",
     "babel-plugin-transform-class-properties": "^6.10.2",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.11.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.3.13",
     "body-parser": "1.18.2",
     "css-loader": "^0.23.1",
